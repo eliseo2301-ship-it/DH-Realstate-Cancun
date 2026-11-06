@@ -1,6 +1,7 @@
 import React from 'react';
 import { COMPANY_INFO } from '../content/company';
-import { Facebook, Mail, Phone, MapPin, ShieldCheck, Heart } from 'lucide-react';
+import { Mail, Phone, MapPin, ShieldCheck, Heart } from 'lucide-react';
+import { FacebookIcon } from './Icons';
 
 export const Footer: React.FC = () => {
   return (
@@ -36,7 +37,7 @@ export const Footer: React.FC = () => {
                 className="w-9 h-9 rounded-full bg-caribbean-800 hover:bg-[#1877F2] text-white flex items-center justify-center transition-colors shadow"
                 aria-label="Facebook oficial D&H Real Estate"
               >
-                <Facebook className="w-4 h-4 fill-white" />
+                <FacebookIcon className="w-4 h-4 fill-white" />
               </a>
               <a
                 href={`mailto:${COMPANY_INFO.email}`}

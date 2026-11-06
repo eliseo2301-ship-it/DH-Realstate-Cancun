@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { COMPANY_INFO } from '../content/company';
-import { Mail, Phone, MapPin, Send, MessageCircle, CheckCircle2, Facebook, QrCode } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle, CheckCircle2, QrCode } from 'lucide-react';
+import { FacebookIcon } from './Icons';
 
 export const ContactSection: React.FC = () => {
   const [name, setName] = useState('');
@@ -89,7 +90,7 @@ export const ContactSection: React.FC = () => {
             <div className="p-5 rounded-2xl bg-gradient-to-r from-blue-900/10 via-caribbean-50 to-sand-100 border border-blue-200/80 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-xl bg-[#1877F2] text-white">
-                  <Facebook className="w-5 h-5 fill-white" />
+                  <FacebookIcon className="w-5 h-5 fill-white" />
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-slate-900">Facebook Oficial</h4>
