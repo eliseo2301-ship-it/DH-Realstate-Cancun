@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { COMPANY_INFO } from '../content/company';
 import { Phone, MessageCircle, Menu, X, PlusCircle, ShieldCheck, Sparkles, Award } from 'lucide-react';
+import { MedallionModal } from './MedallionModal';
 
 interface NavbarProps {
   onOpenAdmin: () => void;
@@ -42,14 +43,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin, propertyCount }) =>
                 {/* Ambient Halo Glow */}
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-bronze-400 via-amber-300 to-caribbean-400 opacity-60 blur-sm group-hover:opacity-100 group-hover:blur-md transition-all duration-500 animate-pulse" />
                 
-                {/* Metallic Bezel Coin Frame */}
-                <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full p-1 bg-gradient-to-br from-[#F5D0A9] via-[#C59268] to-[#603813] shadow-[0_0_20px_rgba(197,146,104,0.5)] transform group-hover:scale-108 group-hover:rotate-3 transition-all duration-300">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-caribbean-950 ring-1 ring-amber-200/40 relative">
+                {/* Metallic Bezel Coin Frame (Golden Contour - Zero White) */}
+                <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full p-1 bg-gradient-to-br from-[#F5D0A9] via-[#C59268] to-[#603813] shadow-[0_0_24px_rgba(212,175,55,0.55)] ring-1 ring-amber-300/80 transform group-hover:scale-108 group-hover:rotate-3 transition-all duration-300">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-caribbean-950 ring-1 ring-amber-300/60 relative flex items-center justify-center p-0.5">
                     <img 
                       src="/assets/Logo.png" 
                       alt="D&H Real Estate Cancún" 
-                      className="w-full h-full object-cover rounded-full transform group-hover:scale-105 transition-transform duration-500"
-                      style={{ clipPath: 'circle(48.5% at 50% 50%)', WebkitClipPath: 'circle(48.5% at 50% 50%)' }}
+                      className="w-full h-full object-contain rounded-full transform group-hover:scale-105 transition-transform duration-500"
                     />
                     {/* Metallic Shimmer Light Sweep on Hover */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/35 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-1000 ease-in-out pointer-events-none" />
@@ -185,64 +185,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin, propertyCount }) =>
       </header>
 
       {/* Interactive Medallion Showcase Modal */}
-      {medallionModalOpen && (
-        <div 
-          className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn"
-          onClick={() => setMedallionModalOpen(false)}
-        >
-          <div 
-            className="relative bg-gradient-to-b from-caribbean-900 to-caribbean-950 border border-bronze-400/50 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-center shadow-2xl space-y-6"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              onClick={() => setMedallionModalOpen(false)}
-              className="absolute top-4 right-4 p-2 rounded-full text-slate-300 hover:text-white hover:bg-caribbean-800 transition-colors"
-              aria-label="Cerrar modal"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* High-Res Interactive Coin Display */}
-            <div className="relative mx-auto w-48 h-48 sm:w-56 sm:h-56 rounded-full p-2 bg-gradient-to-br from-[#F5D0A9] via-[#C59268] to-[#603813] shadow-[0_0_40px_rgba(197,146,104,0.6)] transform hover:scale-105 transition-transform duration-500">
-              <div className="w-full h-full rounded-full overflow-hidden bg-caribbean-950 ring-2 ring-amber-200/50">
-                <img 
-                  src="/assets/Logo.png" 
-                  alt="D&H Real Estate Cancún - Medallón Oficial" 
-                  className="w-full h-full object-cover rounded-full"
-                  style={{ clipPath: 'circle(48.5% at 50% 50%)', WebkitClipPath: 'circle(48.5% at 50% 50%)' }}
-                />
-              </div>
-            </div>
-
-            {/* Narrative */}
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-bronze-500/20 text-bronze-300 border border-bronze-400/30 text-xs font-bold uppercase tracking-widest mb-3">
-                <Award className="w-3.5 h-3.5" />
-                <span>Sello Oficial de Garantía Fiduciaria</span>
-              </div>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">
-                D&H Real Estate Cancún
-              </h3>
-              <p className="text-sm text-bronze-200 font-medium mb-3">
-                Domínguez & Herrera • Asesoría Inmobiliaria y Jurídica Integral
-              </p>
-              <p className="text-xs text-slate-300 leading-relaxed max-w-sm mx-auto">
-                Diseñado en cobre cepillado y azul caribeño como símbolo de la solidez legal y la frescura patrimonial en Cancún y la Riviera Maya.
-              </p>
-            </div>
-
-            <div className="pt-4 border-t border-caribbean-800 flex items-center justify-center gap-3">
-              <button
-                onClick={() => setMedallionModalOpen(false)}
-                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-bronze-500 to-bronze-400 text-slate-950 font-bold text-xs uppercase tracking-wider hover:from-bronze-600 hover:to-bronze-500 transition-all shadow"
-              >
-                Cerrar Visor
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <MedallionModal isOpen={medallionModalOpen} onClose={() => setMedallionModalOpen(false)} />
     </>
   );
 };

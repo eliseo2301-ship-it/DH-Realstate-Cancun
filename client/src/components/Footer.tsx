@@ -11,8 +11,8 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-bronze-400 to-bronze-200">
-                <img src="/assets/Logo.png" alt="D&H Real Estate Cancún" className="w-full h-full object-cover rounded-full" />
+              <div className="w-12 h-12 rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-[#F5D0A9] via-[#C59268] to-[#603813] ring-1 ring-amber-300/80 shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center justify-center">
+                <img src="/assets/Logo.png" alt="D&H Real Estate Cancún" className="w-full h-full object-contain rounded-full" />
               </div>
               <div>
                 <span className="font-serif text-xl font-bold tracking-tight text-white block">
