@@ -15,7 +15,7 @@ import { AdminPropertyModal } from './components/AdminPropertyModal';
 import { AppointmentModal } from './components/AppointmentModal';
 import { MessageCircle, Sparkles, Building2 } from 'lucide-react';
 
-const LOCAL_STORAGE_KEY = 'dh_properties_active_v2';
+const LOCAL_STORAGE_KEY = 'dh_properties_active_v3';
 
 // Load from localStorage first to preserve all user deletions and edits
 const loadSavedProperties = (): Property[] => {

@@ -1,5 +1,81 @@
 [
   {
+    "folder": "Casa Residensial Mallorca Venta",
+    "id": "casa-residencial-mallorca-venta",
+    "title": "Casa Ampliada con Alberca Privada - Residencial Mallorca",
+    "operation": "Venta",
+    "propertyType": "Casa",
+    "price": 3199000,
+    "currency": "MXN",
+    "period": "venta",
+    "location": {
+      "address": "Calle Florencia, Supermanzana 327, Residencial Mallorca",
+      "city": "Cancún",
+      "state": "Quintana Roo",
+      "zone": "Polígono Sur / Av. 135 y Huayacán"
+    },
+    "specs": {
+      "bedrooms": 3,
+      "bathrooms": 2.5,
+      "parking": 1,
+      "furnished": false,
+      "areaM2": 160
+    },
+    "features": [
+      "Alberca privada de 4x4 metros en patio trasero",
+      "5 Equipos de Aire Acondicionado completamente nuevos",
+      "Recámara principal monumental con máxima ventilación",
+      "Estancia adicional en PB para Home Office o visitas",
+      "2.5 Baños completos y de cortesía",
+      "Tanque estacionario de gas completamente nuevo",
+      "100% recién pintada, impermeabilizada y detallada",
+      "Privada con seguridad 24/7, palapa y alberca común",
+      "Documentación en regla, lista para escriturar"
+    ],
+    "highlight": "¡Oasis residencial en Polígono Sur! Casa completamente ampliada y equipada con alberca privada de 4x4m, 5 climas nuevos y ubicación privilegiada en Residencial Mallorca.",
+    "featured": true,
+    "images": [
+      "/properties/casa-residencial-mallorca-venta/photo-1.png",
+      "/properties/casa-residencial-mallorca-venta/photo-2.png",
+      "/properties/casa-residencial-mallorca-venta/photo-3.png",
+      "/properties/casa-residencial-mallorca-venta/photo-4.png",
+      "/properties/casa-residencial-mallorca-venta/photo-5.png",
+      "/properties/casa-residencial-mallorca-venta/photo-6.png",
+      "/properties/casa-residencial-mallorca-venta/photo-7.png",
+      "/properties/casa-residencial-mallorca-venta/photo-8.png",
+      "/properties/casa-residencial-mallorca-venta/photo-9.png",
+      "/properties/casa-residencial-mallorca-venta/photo-10.png",
+      "/properties/casa-residencial-mallorca-venta/photo-11.png",
+      "/properties/casa-residencial-mallorca-venta/photo-12.png",
+      "/properties/casa-residencial-mallorca-venta/photo-13.png",
+      "/properties/casa-residencial-mallorca-venta/photo-14.png",
+      "/properties/casa-residencial-mallorca-venta/photo-15.png",
+      "/properties/casa-residencial-mallorca-venta/photo-16.png",
+      "/properties/casa-residencial-mallorca-venta/photo-17.png",
+      "/properties/casa-residencial-mallorca-venta/photo-18.png",
+      "/properties/casa-residencial-mallorca-venta/photo-19.png",
+      "/properties/casa-residencial-mallorca-venta/photo-20.png"
+    ],
+    "mainImage": "/properties/casa-residencial-mallorca-venta/photo-11.png",
+    "status": "Disponible",
+    "createdAt": "2026-11-06T21:54:54.000Z",
+    "updatedAt": "2026-11-06T21:54:54.000Z",
+    "advisors": [
+      {
+        "name": "Alejandro Herrera",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "9987667484",
+        "email": "dh.realstate.cun@gmail.com"
+      },
+      {
+        "name": "Reyna Domínguez",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "5522707664",
+        "email": "dh.realstate.cun@gmail.com"
+      }
+    ]
+  },
+  {
     "folder": "Casa en Renta Mod Noni Semi-amueblada Jardines del Sur 6",
     "id": "casa-jardines-del-sur-6-noni",
     "title": "Casa Semi-Amueblada Modelo Noni - Jardines del Sur 6",
@@ -47,8 +123,8 @@
     ],
     "mainImage": "/properties/casa-jardines-del-sur-6-noni/photo-1.jpeg",
     "status": "Disponible",
-    "createdAt": "2026-11-06T21:25:55.697Z",
-    "updatedAt": "2026-11-06T21:25:55.697Z",
+    "createdAt": "2026-11-06T21:54:54.027Z",
+    "updatedAt": "2026-11-06T21:54:54.027Z",
     "advisors": [
       {
         "name": "Alejandro Herrera",
@@ -114,8 +190,8 @@
     ],
     "mainImage": "/properties/depto-punta-estrella-playa-del-carmen/photo-1.jpeg",
     "status": "Disponible",
-    "createdAt": "2026-11-06T21:25:55.725Z",
-    "updatedAt": "2026-11-06T21:25:55.725Z",
+    "createdAt": "2026-11-06T21:54:54.068Z",
+    "updatedAt": "2026-11-06T21:54:54.068Z",
     "advisors": [
       {
         "name": "Alejandro Herrera",
@@ -179,8 +255,8 @@
     ],
     "mainImage": "/properties/depto-dream-lagoons/photo-1.jpeg",
     "status": "Disponible",
-    "createdAt": "2026-11-06T21:25:55.758Z",
-    "updatedAt": "2026-11-06T21:25:55.758Z",
+    "createdAt": "2026-11-06T21:54:54.096Z",
+    "updatedAt": "2026-11-06T21:54:54.096Z",
     "advisors": [
       {
         "name": "Alejandro Herrera",
@@ -242,8 +318,8 @@
     ],
     "mainImage": "/properties/casa-jardines-del-sur-2/photo-1.jpeg",
     "status": "Disponible",
-    "createdAt": "2026-11-06T21:25:55.783Z",
-    "updatedAt": "2026-11-06T21:25:55.783Z",
+    "createdAt": "2026-11-06T21:54:54.115Z",
+    "updatedAt": "2026-11-06T21:54:54.115Z",
     "advisors": [
       {
         "name": "Alejandro Herrera",
@@ -307,8 +383,8 @@
     ],
     "mainImage": "/properties/depto-jardines-del-sur-3/photo-1.jpeg",
     "status": "Disponible",
-    "createdAt": "2026-11-06T21:25:55.824Z",
-    "updatedAt": "2026-11-06T21:25:55.824Z",
+    "createdAt": "2026-11-06T21:54:54.137Z",
+    "updatedAt": "2026-11-06T21:54:54.137Z",
     "advisors": [
       {
         "name": "Alejandro Herrera",
@@ -366,8 +442,8 @@
     ],
     "mainImage": "/properties/casa-residencial-izamal/photo-1.jpeg",
     "status": "Disponible",
-    "createdAt": "2026-11-06T21:25:55.844Z",
-    "updatedAt": "2026-11-06T21:25:55.844Z",
+    "createdAt": "2026-11-06T21:54:54.147Z",
+    "updatedAt": "2026-11-06T21:54:54.147Z",
     "advisors": [
       {
         "name": "Alejandro Herrera",
@@ -430,8 +506,8 @@
     ],
     "mainImage": "/properties/casa-residencial-zendala/photo-1.jpeg",
     "status": "Disponible",
-    "createdAt": "2026-11-06T21:25:55.876Z",
-    "updatedAt": "2026-11-06T21:25:55.876Z",
+    "createdAt": "2026-11-06T21:54:54.168Z",
+    "updatedAt": "2026-11-06T21:54:54.168Z",
     "advisors": [
       {
         "name": "Alejandro Herrera",
