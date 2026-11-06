@@ -13,17 +13,6 @@ export const PhilosophySection: React.FC = () => {
 
   return (
     <section id="filosofia" className="py-20 lg:py-28 bg-sand-50 relative overflow-hidden">
-      {/* Centered Section Background Watermark (Balanced & Centered on All Screens) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none">
-        <div className="w-[320px] sm:w-[500px] md:w-[700px] aspect-square rounded-full opacity-[0.035] transform scale-105">
-          <img 
-            src="/assets/Logo.png" 
-            alt="D&H Watermark" 
-            className="w-full h-full object-contain mx-auto" 
-          />
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
@@ -39,25 +28,35 @@ export const PhilosophySection: React.FC = () => {
           </p>
         </div>
 
-        {/* Philosophy Highlight Quote Card (Centered Logo Watermark + Interactive Moving Gold Particles) */}
+        {/* Philosophy Highlight Quote Card (ONLY Golden Circle Visible - White Box Removed via Circular Clip-Path) */}
         <div className="bg-gradient-to-br from-caribbean-900 via-caribbean-950 to-[#061222] text-white rounded-3xl p-6 sm:p-10 lg:p-14 shadow-luxury border border-bronze-400/40 relative mb-16 overflow-hidden">
           {/* Interactive Floating Gold Particles Canvas */}
           <GoldParticles count={38} className="absolute inset-0 pointer-events-none" />
 
-          {/* Centered Medallion Watermark INSIDE the Card */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none z-0">
-            <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-[420px] md:h-[420px] rounded-full opacity-[0.09] transform scale-110 blur-[0.3px]">
+          {/* Centered Golden Circle Watermark (White outer frame 100% eliminated) */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
+            <div 
+              className="w-60 h-60 sm:w-80 sm:h-80 md:w-[420px] md:h-[420px] aspect-square rounded-full overflow-hidden opacity-15 transform scale-105"
+              style={{
+                clipPath: 'circle(48.5% at 50% 50%)',
+                WebkitClipPath: 'circle(48.5% at 50% 50%)'
+              }}
+            >
               <img 
                 src="/assets/Logo.png" 
                 alt="D&H Sello Oficial" 
-                className="w-full h-full object-contain mx-auto" 
+                className="w-full h-full object-cover rounded-full" 
+                style={{
+                  clipPath: 'circle(48.5% at 50% 50%)',
+                  WebkitClipPath: 'circle(48.5% at 50% 50%)'
+                }}
               />
             </div>
-            {/* Subtle radial golden glow behind centered watermark */}
-            <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-bronze-400/10 blur-3xl pointer-events-none" />
+            {/* Soft ambient golden glow around the circular medal */}
+            <div className="absolute w-64 h-64 sm:w-88 sm:h-88 md:w-[460px] md:h-[460px] rounded-full bg-gradient-to-r from-amber-500/10 via-bronze-400/15 to-caribbean-400/10 blur-3xl pointer-events-none" />
           </div>
 
-          {/* Content (Mobile Optimized & Centered) */}
+          {/* Content (Centered & Mobile Optimized) */}
           <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Quote Mark */}
             <div className="w-12 h-12 rounded-full bg-bronze-500/20 border border-bronze-400/30 flex items-center justify-center mb-6">
@@ -76,11 +75,21 @@ export const PhilosophySection: React.FC = () => {
 
             {/* Centered Founders Credential Badge */}
             <div className="inline-flex items-center gap-3.5 px-4 py-2 rounded-2xl bg-caribbean-950/80 border border-bronze-400/40 shadow-md backdrop-blur-sm">
-              <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full p-0.5 bg-gradient-to-tr from-bronze-400 to-amber-200 shrink-0 shadow">
+              <div 
+                className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full p-0.5 bg-gradient-to-tr from-bronze-400 to-amber-200 shrink-0 shadow overflow-hidden"
+                style={{
+                  clipPath: 'circle(49% at 50% 50%)',
+                  WebkitClipPath: 'circle(49% at 50% 50%)'
+                }}
+              >
                 <img 
                   src="/assets/Logo.png" 
                   alt="D&H Real Estate" 
                   className="w-full h-full object-cover rounded-full" 
+                  style={{
+                    clipPath: 'circle(48.5% at 50% 50%)',
+                    WebkitClipPath: 'circle(48.5% at 50% 50%)'
+                  }}
                 />
               </div>
               <div className="text-left">

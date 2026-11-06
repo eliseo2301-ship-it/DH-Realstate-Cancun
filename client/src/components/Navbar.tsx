@@ -49,6 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin, propertyCount }) =>
                       src="/assets/Logo.png" 
                       alt="D&H Real Estate Cancún" 
                       className="w-full h-full object-cover rounded-full transform group-hover:scale-105 transition-transform duration-500"
+                      style={{ clipPath: 'circle(48.5% at 50% 50%)', WebkitClipPath: 'circle(48.5% at 50% 50%)' }}
                     />
                     {/* Metallic Shimmer Light Sweep on Hover */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/35 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-1000 ease-in-out pointer-events-none" />
@@ -208,7 +209,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin, propertyCount }) =>
                 <img 
                   src="/assets/Logo.png" 
                   alt="D&H Real Estate Cancún - Medallón Oficial" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-full"
+                  style={{ clipPath: 'circle(48.5% at 50% 50%)', WebkitClipPath: 'circle(48.5% at 50% 50%)' }}
                 />
               </div>
             </div>
