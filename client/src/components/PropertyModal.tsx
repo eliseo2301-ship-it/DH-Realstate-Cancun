@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Property } from '../data/types';
-import { X, ChevronLeft, ChevronRight, Bed, Bath, Car, MapPin, CheckCircle2, ShieldCheck, MessageCircle, Phone, Mail, Share2 } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Bed, Bath, Car, MapPin, CheckCircle2, ShieldCheck, MessageCircle, Phone, Mail, Share2, Calendar } from 'lucide-react';
 
 interface PropertyModalProps {
   property: Property | null;
   onClose: () => void;
+  onBookAppointment?: (property: Property) => void;
 }
 
-export const PropertyModal: React.FC<PropertyModalProps> = ({ property, onClose }) => {
+export const PropertyModal: React.FC<PropertyModalProps> = ({ property, onClose, onBookAppointment }) => {
   if (!property) return null;
 
   const [activePhotoIndex, setActivePhotoIndex] = useState(0);
@@ -216,9 +217,23 @@ export const PropertyModal: React.FC<PropertyModalProps> = ({ property, onClose 
                   </div>
                 </div>
 
-                <p className="text-xs text-slate-300 mb-4 leading-relaxed">
+                <p className="text-xs text-slate-300 mb-3 leading-relaxed">
                   Agenda una visita privada o solicita el expediente legal completo de esta propiedad directamente con nuestros socios fundadores.
                 </p>
+
+                {/* Direct Appointment Booking Button */}
+                {onBookAppointment && (
+                  <button
+                    onClick={() => {
+                      onClose();
+                      onBookAppointment(property);
+                    }}
+                    className="w-full flex items-center justify-center gap-2 p-3 rounded-xl bg-gradient-to-r from-bronze-500 via-bronze-400 to-amber-300 text-slate-950 font-bold text-xs mb-3 shadow-md hover:from-bronze-600 hover:to-bronze-500 transition-all transform active:scale-98"
+                  >
+                    <Calendar className="w-4 h-4 text-slate-950" />
+                    <span>Agendar Cita con Sincronización</span>
+                  </button>
+                )}
 
                 {/* Direct Founders Contact Buttons */}
                 <div className="space-y-2.5">

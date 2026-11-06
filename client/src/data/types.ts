@@ -56,3 +56,19 @@ export interface PropertyFilterState {
   bedrooms: string;
   searchQuery: string;
 }
+
+export interface Appointment {
+  id?: string;
+  propertyId: string;
+  propertyTitle: string;
+  propertyAddress: string;
+  clientName: string;
+  clientPhone: string;
+  clientEmail?: string;
+  date: string;
+  time: string;
+  advisorName: string;
+  advisorPhone: string;
+  notes?: string;
+  createdAt?: string;
+}

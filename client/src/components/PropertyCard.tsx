@@ -1,13 +1,14 @@
 import React from 'react';
 import { Property } from '../data/types';
-import { MapPin, Bed, Bath, Car, Maximize2, MessageCircle, Eye, ShieldCheck } from 'lucide-react';
+import { MapPin, Bed, Bath, Car, Maximize2, MessageCircle, Eye, ShieldCheck, Calendar } from 'lucide-react';
 
 interface PropertyCardProps {
   property: Property;
   onSelect: (property: Property) => void;
+  onBookAppointment?: (property: Property) => void;
 }
 
-export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onSelect }) => {
+export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onSelect, onBookAppointment }) => {
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('es-MX', {
       style: 'currency',
@@ -127,8 +128,19 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onSelect }
             className="flex-1 inline-flex items-center justify-center gap-1.5 bg-caribbean-900 hover:bg-caribbean-800 text-white font-medium text-xs py-2.5 px-3 rounded-xl transition-colors duration-200"
           >
             <Maximize2 className="w-3.5 h-3.5 text-caribbean-300" />
-            <span>Ver Ficha Completa</span>
+            <span>Ver Ficha</span>
           </button>
+
+          {onBookAppointment && (
+            <button
+              onClick={() => onBookAppointment(property)}
+              className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-bronze-500/15 hover:bg-bronze-500/25 border border-bronze-400/50 text-bronze-900 font-bold text-xs transition-colors"
+              title="Agendar cita y sincronizar con Google/Outlook"
+            >
+              <Calendar className="w-3.5 h-3.5 text-bronze-700" />
+              <span>Agendar</span>
+            </button>
+          )}
 
           <a
             href={whatsappUrl}

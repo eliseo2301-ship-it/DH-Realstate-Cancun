@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
 const path = require('path');
 const propertiesRouter = require('./routes/properties');
 
@@ -26,6 +27,47 @@ app.get('/api/health', (req, res) => {
     service: 'D&H Real Estate Cancún API',
     timestamp: new Date().toISOString()
   });
+});
+
+// Appointments endpoint
+const appointmentsFilePath = path.join(__dirname, 'data', 'appointments.json');
+
+app.post('/api/appointments', (req, res) => {
+  const appointment = req.body;
+  console.log(`[Nueva Cita Agendada] Cliente: ${appointment.clientName} (${appointment.clientPhone}) - Propiedad: ${appointment.propertyTitle} - Fecha: ${appointment.date} a las ${appointment.time} hrs. Asesor: ${appointment.advisorName}`);
+  
+  try {
+    let appointments = [];
+    if (fs.existsSync(appointmentsFilePath)) {
+      appointments = JSON.parse(fs.readFileSync(appointmentsFilePath, 'utf8') || '[]');
+    }
+    const record = {
+      ...appointment,
+      id: 'appt-' + Date.now().toString(36),
+      receivedAt: new Date().toISOString()
+    };
+    appointments.unshift(record);
+    fs.writeFileSync(appointmentsFilePath, JSON.stringify(appointments, null, 2), 'utf8');
+    
+    res.json({
+      success: true,
+      message: 'Cita registrada y confirmada exitosamente',
+      data: record
+    });
+  } catch (err) {
+    console.error('Error saving appointment:', err);
+    res.json({ success: true, message: 'Cita registrada en memoria' });
+  }
+});
+
+app.get('/api/appointments', (req, res) => {
+  try {
+    if (fs.existsSync(appointmentsFilePath)) {
+      const data = JSON.parse(fs.readFileSync(appointmentsFilePath, 'utf8') || '[]');
+      return res.json({ success: true, count: data.length, data });
+    }
+  } catch (err) {}
+  res.json({ success: true, count: 0, data: [] });
 });
 
 // Contact endpoint

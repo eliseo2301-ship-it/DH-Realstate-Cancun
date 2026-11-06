@@ -12,6 +12,7 @@ import { ServicesSection } from './components/ServicesSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { AdminPropertyModal } from './components/AdminPropertyModal';
+import { AppointmentModal } from './components/AppointmentModal';
 import { MessageCircle, Sparkles, Building2 } from 'lucide-react';
 
 const LOCAL_STORAGE_KEY = 'dh_properties_active_v2';
@@ -35,6 +36,7 @@ const loadSavedProperties = (): Property[] => {
 export function App() {
   const [properties, setProperties] = useState<Property[]>(loadSavedProperties);
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
+  const [appointmentProperty, setAppointmentProperty] = useState<Property | null>(null);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
 
   // Filters State
@@ -251,6 +253,7 @@ export function App() {
                 key={prop.id}
                 property={prop}
                 onSelect={(p) => setSelectedProperty(p)}
+                onBookAppointment={(p) => setAppointmentProperty(p)}
               />
             ))}
           </div>
@@ -276,6 +279,13 @@ export function App() {
       <PropertyModal
         property={selectedProperty}
         onClose={() => setSelectedProperty(null)}
+        onBookAppointment={(p) => setAppointmentProperty(p)}
+      />
+
+      <AppointmentModal
+        property={appointmentProperty}
+        isOpen={!!appointmentProperty}
+        onClose={() => setAppointmentProperty(null)}
       />
 
       <AdminPropertyModal
