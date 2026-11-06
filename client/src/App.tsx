@@ -14,8 +14,26 @@ import { Footer } from './components/Footer';
 import { AdminPropertyModal } from './components/AdminPropertyModal';
 import { MessageCircle, Sparkles, Building2 } from 'lucide-react';
 
+const LOCAL_STORAGE_KEY = 'dh_properties_active_v1';
+
+// Load from localStorage first to preserve all user deletions and edits
+const loadSavedProperties = (): Property[] => {
+  try {
+    const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed;
+      }
+    }
+  } catch (e) {
+    console.error('Error loading custom properties from localStorage:', e);
+  }
+  return initialProperties as Property[];
+};
+
 export function App() {
-  const [properties, setProperties] = useState<Property[]>(initialProperties as Property[]);
+  const [properties, setProperties] = useState<Property[]>(loadSavedProperties);
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
 
@@ -31,14 +49,28 @@ export function App() {
   };
   const [filters, setFilters] = useState<PropertyFilterState>(initialFilterState);
 
-  // Fetch from API if running, fallback gracefully
+  // Safe updater that always syncs state and localStorage
+  const updateAndPersistProperties = (newProps: Property[]) => {
+    setProperties(newProps);
+    try {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newProps));
+    } catch (e) {
+      console.error('Error saving to localStorage:', e);
+    }
+  };
+
+  // Fetch from API if running, only updating if no custom user deletions exist
   const fetchProperties = async () => {
     try {
       const res = await fetch('/api/properties');
       if (res.ok) {
         const data = await res.json();
-        if (data.data && Array.isArray(data.data)) {
-          setProperties(data.data);
+        if (data.data && Array.isArray(data.data) && data.data.length > 0) {
+          // If the user already has custom local edits, keep them!
+          const hasLocalCustom = localStorage.getItem(LOCAL_STORAGE_KEY);
+          if (!hasLocalCustom) {
+            updateAndPersistProperties(data.data);
+          }
         }
       }
     } catch {
@@ -53,19 +85,15 @@ export function App() {
   // Filtered properties memoization
   const filteredProperties = useMemo(() => {
     return properties.filter((prop) => {
-      // Operation filter
       if (filters.operation !== 'Todos' && prop.operation !== filters.operation) {
         return false;
       }
-      // Type filter
       if (filters.propertyType !== 'Todos' && prop.propertyType !== filters.propertyType) {
         return false;
       }
-      // City filter
       if (filters.city && !prop.location.city.toLowerCase().includes(filters.city.toLowerCase())) {
         return false;
       }
-      // Search query
       if (filters.searchQuery.trim()) {
         const q = filters.searchQuery.toLowerCase();
         const matchTitle = prop.title.toLowerCase().includes(q);
@@ -91,11 +119,12 @@ export function App() {
 
       if (res.ok) {
         const json = await res.json();
-        setProperties((prev) => [json.data, ...prev]);
+        const updated = [json.data, ...properties];
+        updateAndPersistProperties(updated);
         return true;
       }
     } catch {
-      // Offline fallback: add to state directly
+      // Offline fallback
     }
 
     const fallbackCreated: Property = {
@@ -105,7 +134,8 @@ export function App() {
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
-    setProperties((prev) => [fallbackCreated, ...prev]);
+    const updated = [fallbackCreated, ...properties];
+    updateAndPersistProperties(updated);
     return true;
   };
 
@@ -118,18 +148,16 @@ export function App() {
       });
       if (res.ok) {
         const json = await res.json();
-        setProperties((prev) =>
-          prev.map((p) => (p.id === id ? { ...p, ...json.data } : p))
-        );
+        const updated = properties.map((p) => (p.id === id ? { ...p, ...json.data } : p));
+        updateAndPersistProperties(updated);
         return true;
       }
     } catch {
       // Offline fallback
     }
 
-    setProperties((prev) =>
-      prev.map((p) => (p.id === id ? { ...p, ...updatedData } : p))
-    );
+    const updated = properties.map((p) => (p.id === id ? { ...p, ...updatedData } : p));
+    updateAndPersistProperties(updated);
     return true;
   };
 
@@ -141,18 +169,16 @@ export function App() {
         body: JSON.stringify({ status }),
       });
       if (res.ok) {
-        setProperties((prev) =>
-          prev.map((p) => (p.id === id ? { ...p, status } : p))
-        );
+        const updated = properties.map((p) => (p.id === id ? { ...p, status } : p));
+        updateAndPersistProperties(updated);
         return true;
       }
     } catch {
       // Offline
     }
 
-    setProperties((prev) =>
-      prev.map((p) => (p.id === id ? { ...p, status } : p))
-    );
+    const updated = properties.map((p) => (p.id === id ? { ...p, status } : p));
+    updateAndPersistProperties(updated);
     return true;
   };
 
@@ -160,14 +186,16 @@ export function App() {
     try {
       const res = await fetch(`/api/properties/${id}`, { method: 'DELETE' });
       if (res.ok) {
-        setProperties((prev) => prev.filter((p) => p.id !== id));
+        const updated = properties.filter((p) => p.id !== id);
+        updateAndPersistProperties(updated);
         return true;
       }
     } catch {
       // Offline
     }
 
-    setProperties((prev) => prev.filter((p) => p.id !== id));
+    const updated = properties.filter((p) => p.id !== id);
+    updateAndPersistProperties(updated);
     return true;
   };
 
@@ -184,7 +212,7 @@ export function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-sand-50 selection:bg-bronze-200 selection:text-slate-950 font-sans">
-      {/* Navigation */}
+      {/* Navigation with Enhanced Interactive Logo */}
       <Navbar onOpenAdmin={() => setIsAdminOpen(true)} propertyCount={properties.length} />
 
       {/* Hero with interactive search */}
