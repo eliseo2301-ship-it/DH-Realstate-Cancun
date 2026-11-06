@@ -1,6 +1,7 @@
 import React from 'react';
 import { Search, Shield, MapPin, Building, Key, Sparkles, CheckCircle2 } from 'lucide-react';
 import { PropertyFilterState, OperationType } from '../data/types';
+import { GoldParticles } from './GoldParticles';
 
 interface HeroProps {
   filters: PropertyFilterState;
@@ -24,6 +25,7 @@ export const Hero: React.FC<HeroProps> = ({ filters, setFilters, onSearch }) => 
         {/* Subtle decorative radiant rings representing luxury medallion */}
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-bronze-400/10 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-caribbean-400/10 blur-3xl" />
+        <GoldParticles count={32} className="absolute inset-0 pointer-events-none z-[1]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-center flex flex-col items-center">
