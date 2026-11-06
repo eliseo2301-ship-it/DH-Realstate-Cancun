@@ -15,7 +15,38 @@ import { AdminPropertyModal } from './components/AdminPropertyModal';
 import { AppointmentModal } from './components/AppointmentModal';
 import { MessageCircle, Sparkles, Building2 } from 'lucide-react';
 
-const LOCAL_STORAGE_KEY = 'dh_properties_active_v3';
+const LOCAL_STORAGE_KEY = 'dh_properties_active_v4';
+
+/**
+ * Orden Canónico solicitado por D&H Real Estate:
+ * 1. Primero las RENTAS de menor a mayor precio.
+ * 2. Después las VENTAS (casas y departamentos) de menor a mayor precio.
+ * 3. Se aplica automáticamente a cualquier propiedad nueva o editada.
+ */
+export const sortPropertiesCustom = (list: Property[]): Property[] => {
+  return [...list].sort((a, b) => {
+    const opOrder = (op: string) => {
+      const lower = (op || '').toLowerCase().trim();
+      if (lower === 'renta') return 1;
+      if (lower === 'venta') return 2;
+      return 3;
+    };
+
+    const rankA = opOrder(a.operation);
+    const rankB = opOrder(b.operation);
+
+    if (rankA !== rankB) {
+      return rankA - rankB;
+    }
+
+    // Dentro de la misma operación, ordenar por precio ascendente (menor a mayor precio)
+    if (a.price !== b.price) {
+      return a.price - b.price;
+    }
+
+    return (a.title || '').localeCompare(b.title || '');
+  });
+};
 
 // Load from localStorage first to preserve all user deletions and edits
 const loadSavedProperties = (): Property[] => {
@@ -24,13 +55,13 @@ const loadSavedProperties = (): Property[] => {
     if (raw) {
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed;
+        return sortPropertiesCustom(parsed);
       }
     }
   } catch (e) {
     console.error('Error loading custom properties from localStorage:', e);
   }
-  return initialProperties as Property[];
+  return sortPropertiesCustom(initialProperties as Property[]);
 };
 
 export function App() {
@@ -51,11 +82,12 @@ export function App() {
   };
   const [filters, setFilters] = useState<PropertyFilterState>(initialFilterState);
 
-  // Safe updater that always syncs state and localStorage
+  // Safe updater that always syncs state, sorts canonically, and persists to localStorage
   const updateAndPersistProperties = (newProps: Property[]) => {
-    setProperties(newProps);
+    const sorted = sortPropertiesCustom(newProps);
+    setProperties(sorted);
     try {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newProps));
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(sorted));
     } catch (e) {
       console.error('Error saving to localStorage:', e);
     }
@@ -84,9 +116,9 @@ export function App() {
     fetchProperties();
   }, []);
 
-  // Filtered properties memoization
+  // Filtered properties memoization with guaranteed canonical sorting
   const filteredProperties = useMemo(() => {
-    return properties.filter((prop) => {
+    const matched = properties.filter((prop) => {
       if (filters.operation !== 'Todos' && prop.operation !== filters.operation) {
         return false;
       }
@@ -108,6 +140,8 @@ export function App() {
       }
       return true;
     });
+
+    return sortPropertiesCustom(matched);
   }, [properties, filters]);
 
   // Admin Actions

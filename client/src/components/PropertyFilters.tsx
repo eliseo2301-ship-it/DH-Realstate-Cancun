@@ -25,8 +25,13 @@ export const PropertyFilters: React.FC<PropertyFiltersProps> = ({
             <Filter className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="font-serif text-lg font-bold text-slate-900">Catálogo de Propiedades</h3>
-            <p className="text-xs text-slate-500">
+            <div className="flex flex-wrap items-center gap-2">
+              <h3 className="font-serif text-lg font-bold text-slate-900">Catálogo de Propiedades</h3>
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-bronze-50 text-bronze-800 border border-bronze-200/80">
+                Rentas y Ventas de menor a mayor precio
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 mt-0.5">
               Mostrando <span className="font-bold text-caribbean-900">{filteredCount}</span> de {totalCount} propiedades disponibles en inventario
             </p>
           </div>

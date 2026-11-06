@@ -25,6 +25,24 @@ function writeProperties(data) {
   }
 }
 
+// Canonical sort: Rentas (menor a mayor precio) primero, luego Ventas (menor a mayor precio)
+function sortPropertiesCanonical(list) {
+  const opOrder = (op) => {
+    const l = (op || '').toLowerCase().trim();
+    if (l === 'renta') return 1;
+    if (l === 'venta') return 2;
+    return 3;
+  };
+
+  return [...list].sort((a, b) => {
+    const rankA = opOrder(a.operation);
+    const rankB = opOrder(b.operation);
+    if (rankA !== rankB) return rankA - rankB;
+    if (a.price !== b.price) return a.price - b.price;
+    return (a.title || '').localeCompare(b.title || '');
+  });
+}
+
 // GET all properties with optional query filtering
 router.get('/', (req, res) => {
   const properties = readProperties();
@@ -68,10 +86,12 @@ router.get('/', (req, res) => {
     );
   }
 
+  const sorted = sortPropertiesCanonical(filtered);
+
   res.json({
     success: true,
-    count: filtered.length,
-    data: filtered
+    count: sorted.length,
+    data: sorted
   });
 });
 
@@ -107,8 +127,8 @@ router.post('/', (req, res) => {
     mainImage: newProp.mainImage || (newProp.images && newProp.images[0]) || '/assets/Logo.png'
   };
 
-  properties.unshift(createdProperty);
-  if (writeProperties(properties)) {
+  const updatedList = sortPropertiesCanonical([createdProperty, ...properties]);
+  if (writeProperties(updatedList)) {
     res.status(201).json({ success: true, message: 'Propiedad registrada exitosamente', data: createdProperty });
   } else {
     res.status(500).json({ success: false, message: 'No se pudo guardar la propiedad' });
@@ -132,8 +152,9 @@ router.put('/:id', (req, res) => {
   };
 
   properties[index] = updatedProperty;
+  const sortedProperties = sortPropertiesCanonical(properties);
 
-  if (writeProperties(properties)) {
+  if (writeProperties(sortedProperties)) {
     res.json({ success: true, message: 'Propiedad actualizada correctamente', data: updatedProperty });
   } else {
     res.status(500).json({ success: false, message: 'No se pudo actualizar la propiedad' });
