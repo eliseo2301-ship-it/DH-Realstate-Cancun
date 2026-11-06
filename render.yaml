@@ -5,17 +5,19 @@ services:
     env: node
     plan: free
     region: oregon
-    buildCommand: npm install --prefix server && npm install --prefix client && npm run build --prefix client
+    buildCommand: npm install --prefix server && npm install --include=dev --prefix client && npm run build --prefix client
     startCommand: node server/index.js
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NPM_CONFIG_PRODUCTION
+        value: "false"
       - key: PORT
         value: 10000
 
-  # Opción Alternativa: Despliegue puro de Frontend como Static Site en Render
+  # Opción Alternativa: Despliegue como Static Site en Render
   # - type: web
   #   name: dh-realstate-cancun-static
   #   env: static
-  #   buildCommand: cd client && npm install && npm run build
+  #   buildCommand: npm install --include=dev --prefix client && npm run build --prefix client
   #   staticPublishPath: client/dist

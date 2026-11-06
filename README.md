@@ -17,61 +17,43 @@
 
 ---
 
-## 🏗️ Arquitectura Modular (Clean Architecture)
+## 🚀 Despliegue en Render (Guía Rápida)
 
-```text
-DH-Realstate-Cancun/
-├── client/                     # Frontend (React 18 + Vite + Tailwind CSS + Lucide)
-│   ├── public/                 # Assets estáticos y fotos de propiedades
-│   ├── src/
-│   │   ├── components/         # Navbar, Hero, PropertyCard, Modal, Filters, Admin, Footer
-│   │   ├── content/            # Filosofía, Misión, Visión, Valores y Biografías
-│   │   ├── data/               # Tipos TypeScript y catálogo de propiedades (JSON)
-│   │   └── styles/             # Paleta extraída de tarjetas corporativas
-│   ├── index.html
-│   ├── tailwind.config.js      # Extensión cromática: Bronce Cobre, Turquesa Caribe, Arena Marfil
-│   └── vite.config.ts
-├── server/                     # Backend API (Express.js)
-│   ├── data/                   # properties.json (Base de datos ligera para actualización semanal)
-│   ├── routes/                 # Endpoints REST (/api/properties, /api/contact, /api/health)
-│   └── index.js                # Servidor unificado para producción
-├── public/                     # Assets maestros de branding y fotos procesadas
-├── docs/                       # Manual de Branding y Guías de Arquitectura
-├── render.yaml                 # Configuración de despliegue automatizado en Render
-├── package.json
-└── README.md
-```
+Puedes desplegar el proyecto en Render de dos formas:
 
----
-
-## 🎨 Identidad Cromática Extraída de Tarjetas Oficiales
-
-- **Bronce / Cobre Metálico Primario:** `#C59268` (Acentos de lujo, emblemas, bordes de distinción)
-- **Bronce Oscuro / Tabaco:** `#8D6346` (Tipografía editorial y contrastes)
-- **Turquesa Caribe:** `#00B4D8` (Ondas del mar, tags interactivos, botones de acción)
-- **Azul Océano Profundo:** `#0077B6` (Degradados marítimos)
-- **Azul Marino Medianoche:** `#0A192F` (Elegancia de fondo, navbar y footer)
-- **Arena Marfil:** `#FAF7F2` (Fondo cálido y acogedor tomado de la tarjeta de presentación)
+### Opción 1: Web Service (Fullstack con API REST y Servidor Express) - Recomendado
+1. En [Render Dashboard](https://dashboard.render.com), haz clic en **New +** ➔ **Web Service**.
+2. Conecta tu repositorio: `eliseo2301-ship-it/DH-Realstate-Cancun`.
+3. Configuración en la interfaz:
+   - **Environment:** `Node`
+   - **Region:** `Oregon` (o la de tu preferencia)
+   - **Branch:** `main`
+   - **Root Directory:** *(dejar vacío)*
+   - **Build Command:**
+     ```bash
+     npm install --prefix server && npm install --include=dev --prefix client && npm run build --prefix client
+     ```
+   - **Start Command:**
+     ```bash
+     node server/index.js
+     ```
+   - **Environment Variables:**
+     - `NODE_ENV` = `production`
+     - `NPM_CONFIG_PRODUCTION` = `false`
 
 ---
 
-## 🚀 Despliegue en Render
-
-El repositorio incluye `render.yaml` preconfigurado:
-1. Conecta este repositorio en tu cuenta de [Render Dashboard](https://dashboard.render.com).
-2. Selecciona **"New +" -> "Blueprint"** y Render detectará automáticamente `render.yaml`.
-3. El comando de build ejecuta:
-   ```bash
-   npm install --prefix server && npm install --prefix client && npm run build --prefix client
-   ```
-4. El comando de inicio levanta el servicio Express en producción:
-   ```bash
-   node server/index.js
-   ```
-
-### Despliegue Manual como Static Site (Opcional)
-- **Build Command:** `npm install --prefix client && npm run build --prefix client`
-- **Publish Directory:** `client/dist`
+### Opción 2: Static Site (Frontend React SPA Autónomo)
+Si prefieres desplegar únicamente el frontend estático:
+1. En [Render Dashboard](https://dashboard.render.com), haz clic en **New +** ➔ **Static Site**.
+2. Conecta tu repositorio: `eliseo2301-ship-it/DH-Realstate-Cancun`.
+3. Configuración en la interfaz:
+   - **Root Directory:** `client`
+   - **Build Command:**
+     ```bash
+     npm install --include=dev && npm run build
+     ```
+   - **Publish Directory:** `dist`
 
 ---
 
@@ -79,7 +61,6 @@ El repositorio incluye `render.yaml` preconfigurado:
 
 1. Instalar dependencias:
    ```bash
-   # En la raíz o en cada subcarpeta
    npm run install:all
    ```
 2. Ejecutar backend:
