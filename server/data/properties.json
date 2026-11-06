@@ -1,5 +1,6 @@
 [
   {
+    "folder": "Casa en Renta Mod Noni Semi-amueblada Jardines del Sur 6",
     "id": "casa-jardines-del-sur-6-noni",
     "title": "Casa Semi-Amueblada Modelo Noni - Jardines del Sur 6",
     "operation": "Renta",
@@ -21,15 +22,15 @@
       "areaM2": 135
     },
     "features": [
-      "Modelo Noni con acabados de alta gama",
+      "Modelo Noni de alta plusvalía",
       "3 Amplias recámaras (principal con vestidor)",
-      "2.5 Baños de diseño contemporáneo",
-      "Privada con doble filtro de seguridad 24/7",
-      "Gimnasio climatizado totalmente equipado",
-      "Alberca semiolímpica, asadores y palapa",
-      "Canchas deportivas y pet park exclusivo"
+      "2.5 Baños modernos",
+      "Gimnasio climatizado equipado",
+      "Extensas áreas verdes y alberca",
+      "Seguridad privada y acceso controlado 24/7",
+      "Parque para mascotas y área de juegos"
     ],
-    "highlight": "Vive en una de las privadas más cotizadas y seguras del sur de Cancún con amenidades de club.",
+    "highlight": "Exclusiva privada residencial en el sur de Cancún con amenidades tipo resort, doble filtro de seguridad y ambiente familiar.",
     "featured": true,
     "images": [
       "/properties/casa-jardines-del-sur-6-noni/photo-1.jpeg",
@@ -46,24 +47,25 @@
     ],
     "mainImage": "/properties/casa-jardines-del-sur-6-noni/photo-1.jpeg",
     "status": "Disponible",
-    "createdAt": "2026-04-16T12:00:00.000Z",
-    "updatedAt": "2026-11-06T12:00:00.000Z",
+    "createdAt": "2026-11-06T21:25:55.697Z",
+    "updatedAt": "2026-11-06T21:25:55.697Z",
     "advisors": [
-      {
-        "name": "Reyna Domínguez",
-        "role": "Asesor Inmobiliario Jurídico",
-        "phone": "5522707664",
-        "email": "dh.realstate.cun@gmail.com"
-      },
       {
         "name": "Alejandro Herrera",
         "role": "Asesor Inmobiliario Jurídico",
         "phone": "9987667484",
         "email": "dh.realstate.cun@gmail.com"
+      },
+      {
+        "name": "Reyna Domínguez",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "5522707664",
+        "email": "dh.realstate.cun@gmail.com"
       }
     ]
   },
   {
+    "folder": "Depto en venta Residencial Punta Estrella Playa del Carmen",
     "id": "depto-punta-estrella-playa-del-carmen",
     "title": "Departamento en Venta Remodelado - Residencial Punta Estrella",
     "operation": "Venta",
@@ -86,16 +88,16 @@
       "areaM2": 85
     },
     "features": [
-      "¡100% Remodelado a nuevo con acabados contemporáneos!",
-      "Planta Baja: máxima comodidad y acceso directo",
-      "2 Recámaras con clósets a medida a estrenar",
-      "2 Baños completos renovados con diseño moderno",
-      "Cocina integral nueva con estufa y campana",
-      "Condominio privado con alberca y seguridad 24 hrs",
-      "Documentación y situación jurídica 100% en regla, lista para escriturar",
-      "Excelente plusvalía y retorno de inversión (ROI) en renta vacacional o anual"
+      "¡100% Remodelado a nuevo!",
+      "Ubicación en Planta Baja con acceso directo",
+      "2 Recámaras principales con excelente iluminación",
+      "2 Baños completos renovados",
+      "Cocina integral nueva equipada",
+      "Clósets nuevos a medida",
+      "Alberca residencial, palapa y jardines tropicales",
+      "Documentación y situación legal 100% en regla"
     ],
-    "highlight": "Extraordinaria oportunidad de inversión en Playa del Carmen con asesoría jurídica integral garantizada por D&H.",
+    "highlight": "Oportunidad inmejorable de inversión patrimonial en Playa del Carmen con retorno garantizado y dictamen jurídico completo.",
     "featured": true,
     "images": [
       "/properties/depto-punta-estrella-playa-del-carmen/photo-1.jpeg",
@@ -112,19 +114,335 @@
     ],
     "mainImage": "/properties/depto-punta-estrella-playa-del-carmen/photo-1.jpeg",
     "status": "Disponible",
-    "createdAt": "2026-04-16T12:00:00.000Z",
-    "updatedAt": "2026-11-06T12:00:00.000Z",
+    "createdAt": "2026-11-06T21:25:55.725Z",
+    "updatedAt": "2026-11-06T21:25:55.725Z",
     "advisors": [
+      {
+        "name": "Alejandro Herrera",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "9987667484",
+        "email": "dh.realstate.cun@gmail.com"
+      },
       {
         "name": "Reyna Domínguez",
         "role": "Asesor Inmobiliario Jurídico",
         "phone": "5522707664",
         "email": "dh.realstate.cun@gmail.com"
-      },
+      }
+    ]
+  },
+  {
+    "folder": "Dreams Lagoons",
+    "id": "depto-dream-lagoons",
+    "title": "Departamento en Renta Exclusivo - Dream Lagoons Cancún",
+    "operation": "Renta",
+    "propertyType": "Departamento",
+    "price": 20000,
+    "currency": "MXN",
+    "period": "mensual",
+    "location": {
+      "address": "Condominio Dream Lagoons",
+      "city": "Cancún",
+      "state": "Quintana Roo",
+      "zone": "Av. Las Torres / Polígono Sur"
+    },
+    "specs": {
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "parking": 2,
+      "furnished": false,
+      "areaM2": 105
+    },
+    "features": [
+      "Acceso a espectacular Laguna Cristalina de 1.8 hectáreas",
+      "3 Cómodas recámaras con clósets",
+      "2 Baños completos con canceles",
+      "Cocina integral equipada con barra",
+      "Pistas para correr, casa club y gimnasio",
+      "Albercas climatizadas y áreas de playa artificial",
+      "Seguridad privada con monitoreo 24/7"
+    ],
+    "highlight": "Disfruta de la vida estilo resort frente a la laguna cristalina navegable en kayak más icónica de Cancún.",
+    "featured": true,
+    "images": [
+      "/properties/depto-dream-lagoons/photo-1.jpeg",
+      "/properties/depto-dream-lagoons/photo-2.jpeg",
+      "/properties/depto-dream-lagoons/photo-3.jpeg",
+      "/properties/depto-dream-lagoons/photo-4.jpeg",
+      "/properties/depto-dream-lagoons/photo-5.jpeg",
+      "/properties/depto-dream-lagoons/photo-6.jpeg",
+      "/properties/depto-dream-lagoons/photo-7.jpeg",
+      "/properties/depto-dream-lagoons/photo-8.jpeg",
+      "/properties/depto-dream-lagoons/photo-9.jpeg",
+      "/properties/depto-dream-lagoons/photo-10.jpeg",
+      "/properties/depto-dream-lagoons/photo-11.jpeg"
+    ],
+    "mainImage": "/properties/depto-dream-lagoons/photo-1.jpeg",
+    "status": "Disponible",
+    "createdAt": "2026-11-06T21:25:55.758Z",
+    "updatedAt": "2026-11-06T21:25:55.758Z",
+    "advisors": [
       {
         "name": "Alejandro Herrera",
         "role": "Asesor Inmobiliario Jurídico",
         "phone": "9987667484",
+        "email": "dh.realstate.cun@gmail.com"
+      },
+      {
+        "name": "Reyna Domínguez",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "5522707664",
+        "email": "dh.realstate.cun@gmail.com"
+      }
+    ]
+  },
+  {
+    "folder": "Jardines del Sur 2",
+    "id": "casa-jardines-del-sur-2",
+    "title": "Casa Residencial en Renta - Jardines del Sur 2",
+    "operation": "Renta",
+    "propertyType": "Casa",
+    "price": 14500,
+    "currency": "MXN",
+    "period": "mensual",
+    "location": {
+      "address": "Jardines del Sur 2",
+      "city": "Cancún",
+      "state": "Quintana Roo",
+      "zone": "Polígono Sur"
+    },
+    "specs": {
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "parking": 2,
+      "furnished": false,
+      "areaM2": 120
+    },
+    "features": [
+      "3 Amplias recámaras con excelente ventilación",
+      "3 Baños completos",
+      "Patio trasero privado ideal para reuniones y mascotas",
+      "Cocina integral con alacena",
+      "Estancia espaciosa de sala y comedor",
+      "Alberca comunitaria, palapa y parques",
+      "Privada con vigilancia y acceso controlado"
+    ],
+    "highlight": "Comodidad total con 3 recámaras y 3 baños completos más patio privado en una de las mejores privadas familiares de Cancún.",
+    "featured": true,
+    "images": [
+      "/properties/casa-jardines-del-sur-2/photo-1.jpeg",
+      "/properties/casa-jardines-del-sur-2/photo-2.jpeg",
+      "/properties/casa-jardines-del-sur-2/photo-3.jpeg",
+      "/properties/casa-jardines-del-sur-2/photo-4.jpeg",
+      "/properties/casa-jardines-del-sur-2/photo-5.jpeg",
+      "/properties/casa-jardines-del-sur-2/photo-6.jpeg",
+      "/properties/casa-jardines-del-sur-2/photo-7.jpeg",
+      "/properties/casa-jardines-del-sur-2/photo-8.jpeg",
+      "/properties/casa-jardines-del-sur-2/photo-9.jpeg"
+    ],
+    "mainImage": "/properties/casa-jardines-del-sur-2/photo-1.jpeg",
+    "status": "Disponible",
+    "createdAt": "2026-11-06T21:25:55.783Z",
+    "updatedAt": "2026-11-06T21:25:55.783Z",
+    "advisors": [
+      {
+        "name": "Alejandro Herrera",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "9987667484",
+        "email": "dh.realstate.cun@gmail.com"
+      },
+      {
+        "name": "Reyna Domínguez",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "5522707664",
+        "email": "dh.realstate.cun@gmail.com"
+      }
+    ]
+  },
+  {
+    "folder": "Jardines del Sur 3",
+    "id": "depto-jardines-del-sur-3",
+    "title": "Departamento en Renta - Jardines del Sur 3",
+    "operation": "Renta",
+    "propertyType": "Departamento",
+    "price": 13000,
+    "currency": "MXN",
+    "period": "mensual",
+    "location": {
+      "address": "Jardines del Sur 3",
+      "city": "Cancún",
+      "state": "Quintana Roo",
+      "zone": "Polígono Sur"
+    },
+    "specs": {
+      "bedrooms": 3,
+      "bathrooms": 2.5,
+      "parking": 1,
+      "furnished": false,
+      "areaM2": 95
+    },
+    "features": [
+      "3 Confortables recámaras",
+      "2.5 Baños de diseño funcional",
+      "Cocina integral con gabinetes",
+      "Área de lavado independiente",
+      "Alberca en privada con asoleadero",
+      "Cerca de escuelas, supermercados y avenidas principales",
+      "Acceso con control automatizado 24 horas"
+    ],
+    "highlight": "Excelente opción de 3 habitaciones con distribución óptima y amenidades con alberca en Polígono Sur.",
+    "featured": true,
+    "images": [
+      "/properties/depto-jardines-del-sur-3/photo-1.jpeg",
+      "/properties/depto-jardines-del-sur-3/photo-2.jpeg",
+      "/properties/depto-jardines-del-sur-3/photo-3.jpeg",
+      "/properties/depto-jardines-del-sur-3/photo-4.jpeg",
+      "/properties/depto-jardines-del-sur-3/photo-5.jpeg",
+      "/properties/depto-jardines-del-sur-3/photo-6.jpeg",
+      "/properties/depto-jardines-del-sur-3/photo-7.jpeg",
+      "/properties/depto-jardines-del-sur-3/photo-8.jpeg",
+      "/properties/depto-jardines-del-sur-3/photo-9.jpeg",
+      "/properties/depto-jardines-del-sur-3/photo-10.jpeg",
+      "/properties/depto-jardines-del-sur-3/photo-11.jpeg"
+    ],
+    "mainImage": "/properties/depto-jardines-del-sur-3/photo-1.jpeg",
+    "status": "Disponible",
+    "createdAt": "2026-11-06T21:25:55.824Z",
+    "updatedAt": "2026-11-06T21:25:55.824Z",
+    "advisors": [
+      {
+        "name": "Alejandro Herrera",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "9987667484",
+        "email": "dh.realstate.cun@gmail.com"
+      },
+      {
+        "name": "Reyna Domínguez",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "5522707664",
+        "email": "dh.realstate.cun@gmail.com"
+      }
+    ]
+  },
+  {
+    "folder": "Residencial Izamal",
+    "id": "casa-residencial-izamal",
+    "title": "Casa en Renta Residencial Izamal",
+    "operation": "Renta",
+    "propertyType": "Casa",
+    "price": 13500,
+    "currency": "MXN",
+    "period": "mensual",
+    "location": {
+      "address": "Residencial Izamal",
+      "city": "Cancún",
+      "state": "Quintana Roo",
+      "zone": "Polígono Sur / Santa Fe"
+    },
+    "specs": {
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "parking": 2,
+      "furnished": false,
+      "areaM2": 110
+    },
+    "features": [
+      "3 Recámaras con armarios empotrados",
+      "2 Baños completos",
+      "Cocina integral con barra",
+      "Patio trasero bardeado y protecciones",
+      "Estacionamiento para 2 vehículos",
+      "Áreas verdes y parque infantil",
+      "Seguridad con caseta de vigilancia 24/7"
+    ],
+    "highlight": "Tranquilidad, seguridad y cercanía a todos los servicios en un fraccionamiento apacible y arbolado.",
+    "featured": false,
+    "images": [
+      "/properties/casa-residencial-izamal/photo-1.jpeg",
+      "/properties/casa-residencial-izamal/photo-2.jpeg",
+      "/properties/casa-residencial-izamal/photo-3.jpeg",
+      "/properties/casa-residencial-izamal/photo-4.jpeg",
+      "/properties/casa-residencial-izamal/photo-5.jpeg"
+    ],
+    "mainImage": "/properties/casa-residencial-izamal/photo-1.jpeg",
+    "status": "Disponible",
+    "createdAt": "2026-11-06T21:25:55.844Z",
+    "updatedAt": "2026-11-06T21:25:55.844Z",
+    "advisors": [
+      {
+        "name": "Alejandro Herrera",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "9987667484",
+        "email": "dh.realstate.cun@gmail.com"
+      },
+      {
+        "name": "Reyna Domínguez",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "5522707664",
+        "email": "dh.realstate.cun@gmail.com"
+      }
+    ]
+  },
+  {
+    "folder": "Residencial Zendala",
+    "id": "casa-residencial-zendala",
+    "title": "Hermosa Casa en Renta - Residencial Zendala",
+    "operation": "Renta",
+    "propertyType": "Casa",
+    "price": 12500,
+    "currency": "MXN",
+    "period": "mensual",
+    "location": {
+      "address": "Residencial Zendala",
+      "city": "Cancún",
+      "state": "Quintana Roo",
+      "zone": "Sur de Cancún / Av. 127"
+    },
+    "specs": {
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "parking": 1,
+      "furnished": false,
+      "areaM2": 115
+    },
+    "features": [
+      "3 Amplias recámaras bien iluminadas",
+      "3 Baños completos (máxima privacidad)",
+      "Cocina integral funcional",
+      "Sala y comedor con vista al patio",
+      "Área de servicio ventilada",
+      "Alberca residencial y palapa para eventos",
+      "Acceso controlado con portón automatizado"
+    ],
+    "highlight": "Gran oportunidad: 3 recámaras y 3 baños a un precio de renta inigualable en privada con alberca.",
+    "featured": true,
+    "images": [
+      "/properties/casa-residencial-zendala/photo-1.jpeg",
+      "/properties/casa-residencial-zendala/photo-2.jpeg",
+      "/properties/casa-residencial-zendala/photo-3.jpeg",
+      "/properties/casa-residencial-zendala/photo-4.jpeg",
+      "/properties/casa-residencial-zendala/photo-5.jpeg",
+      "/properties/casa-residencial-zendala/photo-6.jpeg",
+      "/properties/casa-residencial-zendala/photo-7.jpeg",
+      "/properties/casa-residencial-zendala/photo-8.jpeg",
+      "/properties/casa-residencial-zendala/photo-9.jpeg",
+      "/properties/casa-residencial-zendala/photo-10.jpeg"
+    ],
+    "mainImage": "/properties/casa-residencial-zendala/photo-1.jpeg",
+    "status": "Disponible",
+    "createdAt": "2026-11-06T21:25:55.876Z",
+    "updatedAt": "2026-11-06T21:25:55.876Z",
+    "advisors": [
+      {
+        "name": "Alejandro Herrera",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "9987667484",
+        "email": "dh.realstate.cun@gmail.com"
+      },
+      {
+        "name": "Reyna Domínguez",
+        "role": "Asesor Inmobiliario Jurídico",
+        "phone": "5522707664",
         "email": "dh.realstate.cun@gmail.com"
       }
     ]
