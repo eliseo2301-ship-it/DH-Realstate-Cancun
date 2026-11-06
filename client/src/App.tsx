@@ -109,6 +109,30 @@ export function App() {
     return true;
   };
 
+  const handleUpdateProperty = async (id: string, updatedData: Partial<Property>): Promise<boolean> => {
+    try {
+      const res = await fetch(`/api/properties/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedData),
+      });
+      if (res.ok) {
+        const json = await res.json();
+        setProperties((prev) =>
+          prev.map((p) => (p.id === id ? { ...p, ...json.data } : p))
+        );
+        return true;
+      }
+    } catch {
+      // Offline fallback
+    }
+
+    setProperties((prev) =>
+      prev.map((p) => (p.id === id ? { ...p, ...updatedData } : p))
+    );
+    return true;
+  };
+
   const handleUpdateStatus = async (id: string, status: PropertyStatus): Promise<boolean> => {
     try {
       const res = await fetch(`/api/properties/${id}`, {
@@ -231,6 +255,7 @@ export function App() {
         onClose={() => setIsAdminOpen(false)}
         properties={properties}
         onAddProperty={handleAddProperty}
+        onUpdateProperty={handleUpdateProperty}
         onUpdateStatus={handleUpdateStatus}
         onDeleteProperty={handleDeleteProperty}
         onReload={fetchProperties}
